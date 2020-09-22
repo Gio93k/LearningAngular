@@ -8,6 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   //title = 'Alphashop';
 
-  saluti = 'Benvenuti nel sito ';
-  titolo2 = 'Seleziona gli articoli da acquistare:'
+
 }
