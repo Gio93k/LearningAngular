@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { ErrorComponent } from './error/error.component';
 import { ArticoliComponent } from './articoli/articoli.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { JumbotronComponent } from './jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ErrorComponent,
     ArticoliComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    JumbotronComponent
   ],
   imports: [
     BrowserModule,
