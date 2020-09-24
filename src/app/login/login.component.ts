@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthappService } from '../services/authapp.service';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   errorMsg = 'UserId o psw errate';
   infoMsg = ' Credenziali corrette';
 
-  constructor(private route: Router) {
+  constructor(private route: Router, private BasicAuth: AuthappService) {
 
   }
 
@@ -23,17 +24,23 @@ export class LoginComponent implements OnInit {
   }
 
   gestAut() {
-    //console.log(this.userid);
-    if (this.userid === 'Nicola' && this.password === '123') {
-
+    if (this.BasicAuth.autentica(this.userid, this.password)) {
       this.route.navigate(['welcome', this.userid])
       this.autenticato = true;
-      // this.consentito = true;
-      console.log(this.autenticato);
     } else {
       this.autenticato = false;
-      // this.consentito = false;
-      console.log(this.autenticato);
     }
+    //console.log(this.userid);
+    // if (this.userid === 'Nicola' && this.password === '123') {
+
+    //   this.route.navigate(['welcome', this.userid])
+    //   this.autenticato = true;
+    //   // this.consentito = true;
+    //   console.log(this.autenticato);
+    // } else {
+    //   this.autenticato = false;
+    //   // this.consentito = false;
+    //   console.log(this.autenticato);
+    // }
   }
 }
