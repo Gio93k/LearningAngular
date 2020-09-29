@@ -1,0 +1,17 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace ArticoliWebService.Models
+{
+    public class FamAssort
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Descrizione { get; set; }
+
+
+        //proprietà relative al collegamento tra classi (relazioni tabelle)
+        public virtual ICollection<Articoli> articoli { get; set; }
+
+    }
+}
