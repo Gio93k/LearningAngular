@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,9 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class SalutiDataService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getSalutiSrv() {
-    console.log("Saluti data service");
+    return this.httpClient.get('http://localhost:8050/api/saluti/Nicola');
   }
 }

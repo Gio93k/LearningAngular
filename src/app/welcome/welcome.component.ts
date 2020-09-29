@@ -19,6 +19,11 @@ export class WelcomeComponent implements OnInit {
   }
 
   getSaluti() {
-    this.salutiSrv.getSalutiSrv();
+    console.log(this.salutiSrv.getSalutiSrv());
+    this.salutiSrv.getSalutiSrv().subscribe(response => this.handleResponse(response));
+  }
+
+  handleResponse(response) {
+    console.log(response);
   }
 }
