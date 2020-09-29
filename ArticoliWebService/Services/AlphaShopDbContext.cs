@@ -12,10 +12,10 @@ namespace ArticoliWebService.Services
         }
 
         //non si usa l'entity framework
-        public virtual DbSet<Articoli> Articoli { get; set} //alla classe articoli corrisponde la tabella articoli
-        public virtual DbSet<Ean> Barcode { get; set} //alla classe Ean corrisponde la taella Barcode
-        public virtual DbSet<FamAssort> Famassort { get; set} //alla classe FamAssort corrisponde la taella famassort
-        public virtual DbSet<Ingredienti> Ingredienti { get; set} //alla classe Ingredienti corrisponde la taella ingredienti
+        public virtual DbSet<Articoli> Articoli { get; set;} //alla classe articoli corrisponde la tabella articoli
+        public virtual DbSet<Ean> Barcode { get; set;} //alla classe Ean corrisponde la taella Barcode
+        public virtual DbSet<FamAssort> Famassort { get; set;} //alla classe FamAssort corrisponde la taella famassort
+        public virtual DbSet<Ingredienti> Ingredienti { get; set;} //alla classe Ingredienti corrisponde la taella ingredienti
         public virtual DbSet<Iva> Iva { get; set; } //alla classe Iva corrisponde la taella Iva
 
 
@@ -52,3 +52,4 @@ namespace ArticoliWebService.Services
             .HasForeignKey(k => k.IdFamAss);
         }
     }
+}

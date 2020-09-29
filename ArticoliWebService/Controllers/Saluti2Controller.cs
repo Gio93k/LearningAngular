@@ -12,7 +12,6 @@ namespace ArticoliWebService.Controllers
             return Ok("SAluti sono il primo webservice creato in dotnet core3");
         }
 
-        [HttpGet("{nome}")]
-        public IActionResult getSaluti2Nome() =>
+
     }
 }

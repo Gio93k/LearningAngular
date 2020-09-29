@@ -1,3 +1,6 @@
+
+using Xunit;
+
 namespace ArticoliWebService.test
 {
     public class SalutiControllerTest
@@ -10,7 +13,7 @@ namespace ArticoliWebService.test
         }
 
         [Fact]
-        public testGetSaluti()
+        public void testGetSaluti()
         {
             string retVal = salutiController.getSaluti();
             Assert.Equal("stringa del metodo", retVal);
