@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ArticoliWebService.Dto;
 using ArticoliWebService.Models;
 using ArticoliWebService.Services;
@@ -26,10 +27,10 @@ namespace ArticoliWebService.Controllers
         /* restituisce ok se tutto è andato bene e restituirà una collezione di articoliDto 
          in formato json, è una classe stampo per le informazioni che vengono richieste*/
 
-        public IActionResult GetArticoliByDesc(string filter)
+        public async Task<IActionResult> GetArticoliByDesc(string filter)
         {
             var articoliDtio = new List<ArticoliDto>();
-            var articoli = this._articoliRepository.SelArticoliByDescrizione(filter);
+            var articoli = await this._articoliRepository.SelArticoliByDescrizione(filter);
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -55,6 +56,67 @@ namespace ArticoliWebService.Controllers
             }
             return Ok(articoliDtio);
         }
+
+
+        [HttpGet("cerca/codice/{CodArt}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200, Type = typeof(ArticoliDto))]
+        public async Task<IActionResult> GetArtcoloByCode(string CodArt)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!(await this._articoliRepository.ArticoloExists(CodArt)))
+            {
+                return NotFound(string.Format("Non è stato trovato alcun articolo con il codice '{0}", CodArt));
+            }
+            var articoli = await this._articoliRepository.SelArticoloByCodice(CodArt);
+
+            var articoliDto = new ArticoliDto
+            {
+                CodArt = articoli.CodArt,
+                Descrizione = articoli.Descrizione,
+                Um = articoli.Um,
+                CodStat = articoli.CodStat,
+                PesoNetto = articoli.PesoNetto,
+                DataCreazione = articoli.DataCreazione
+            };
+            return Ok(articoliDto);
+        }
+
+        [HttpGet("cerca/barcode/{barcode}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(200, Type = typeof(ArticoliDto))]
+        public async Task<IActionResult> GetArtcoloByEan(string barcode)
+        {
+            var articoli = await this._articoliRepository.SelArticoloByEan(barcode);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (articoli == null)
+            {
+                return NotFound(string.Format("Non è stato trovato alcun articolo con il barcode '{0}", barcode));
+            }
+            var articoliDto = new ArticoliDto
+            {
+                CodArt = articoli.CodArt,
+                Descrizione = articoli.Descrizione,
+                Um = articoli.Um,
+                CodStat = articoli.CodStat,
+                PesoNetto = articoli.PesoNetto,
+                DataCreazione = articoli.DataCreazione
+            };
+            return Ok(articoliDto);
+
+        }
+
+
+
 
 
     }

@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using ArticoliWebService.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ArticoliWebService.Services
 {
@@ -11,31 +13,34 @@ namespace ArticoliWebService.Services
         {
             this._alphaShopDbContext = alphaShopDbContext;
         }
-        public ICollection<Articoli> SelArticoliByDescrizione(string Descrizione)
+        public async Task<ICollection<Articoli>> SelArticoliByDescrizione(string Descrizione)
         {
-            return this._alphaShopDbContext.Articoli
+            return await this._alphaShopDbContext.Articoli
             .Where(a => a.Descrizione.Contains(Descrizione))
             .OrderBy(a => a.Descrizione)
-            .ToList();
+            .ToListAsync();
         }
-        public Articoli SelArticoloByCodice(string Code)
+        public async Task<Articoli> SelArticoloByCodice(string Code)
         {
-            return this._alphaShopDbContext.Articoli
+            return await this._alphaShopDbContext.Articoli
             .Where(c => c.CodArt.Equals(Code))
-            .FirstOrDefault();
+            .FirstOrDefaultAsync();
         }
-        public Articoli SelArticoloByEan(string Ean)
+        public async Task<Articoli> SelArticoloByEan(string Ean)
         {
-            return this._alphaShopDbContext.Barcode
+            return await this._alphaShopDbContext.Barcode
             .Where(c => c.BarCode.Equals(Ean))
             .Select(a => a.articolo)
-            .FirstOrDefault();
+            .FirstOrDefaultAsync();
         }
-        public bool ArticoloExists(string code)
+        public async Task<bool> ArticoloExists(string code)
         {
+            return await Task.FromResult<bool>(this._alphaShopDbContext.Articoli.Any(c => c.CodArt == code));
+            /*
+            La mia
             if (this._alphaShopDbContext.Articoli
             .Where(c => c.CodArt.Equals(code)).FirstOrDefault() != null) return true;
-            else return false;
+            else return  false;*/
         }
 
         public bool DelArticoli(Articoli articolo)
