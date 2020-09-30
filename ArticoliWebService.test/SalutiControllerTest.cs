@@ -5,19 +5,19 @@ namespace ArticoliWebService.test
 {
     public class SalutiControllerTest
     {
-        SalutiController salutiController;
+        // SalutiController salutiController;
 
-        public SalutiControllerTest()
-        {
-            salutiController = new SalutiController();
-        }
+        // public SalutiControllerTest()
+        // {
+        //     salutiController = new SalutiController();
+        // }
 
-        [Fact]
-        public void testGetSaluti()
-        {
-            string retVal = salutiController.getSaluti();
-            Assert.Equal("stringa del metodo", retVal);
-        }
+        // [Fact]
+        // public void testGetSaluti()
+        // {
+        //     string retVal = salutiController.getSaluti();
+        //     Assert.Equal("stringa del metodo", retVal);
+        // }
 
     }
 }

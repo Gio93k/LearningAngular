@@ -16,3 +16,16 @@ C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliW
 C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\obj\Debug\netcoreapp3.1\Articoli-Web-Service.RazorTargetAssemblyInfo.cache
 C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\obj\Debug\netcoreapp3.1\Articoli-Web-Service.dll
 C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\obj\Debug\netcoreapp3.1\Articoli-Web-Service.pdb
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\Remotion.Linq.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\System.Interactive.Async.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\gioara.roberta.cuccu\source\repos\Test_cose\Angular\Alphashop\ArticoliWebService\obj\Debug\netcoreapp3.1\Articoli-Web-Service.csproj.CopyComplete

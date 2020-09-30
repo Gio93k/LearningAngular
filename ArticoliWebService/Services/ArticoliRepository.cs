@@ -33,7 +33,9 @@ namespace ArticoliWebService.Services
         }
         public bool ArticoloExists(string code)
         {
-            throw new System.NotImplementedException();
+            if (this._alphaShopDbContext.Articoli
+            .Where(c => c.CodArt.Equals(code)).FirstOrDefault() != null) return true;
+            else return false;
         }
 
         public bool DelArticoli(Articoli articolo)
